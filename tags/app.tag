@@ -15,7 +15,9 @@
     <div show={menuState === "dashboard"}>
       <div class="row">
         <div class="col-4">
+          <!-- Showing user profile -->
           <profile></profile>
+          <!-- Showing user interests -->
           <interest></interest>
         </div>
         <div class="col-8">
