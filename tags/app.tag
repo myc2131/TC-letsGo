@@ -3,6 +3,7 @@
   <div class="container">
 
     <!-- LOG IN -->
+    testing 1235678
     <div show={menuState ==="login"}>
       <form>
         <div class="form-group">
@@ -20,7 +21,7 @@
     </div>
 
     <!-- SIGN UP -->
-    <div show={menuState ==="signUp" }>
+    <div show={menuState ==="signUp"}>
       <form>
         <div class="form-group">
           <label for="fname">First Name:</label>
