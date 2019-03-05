@@ -13,7 +13,6 @@
       <div class="row">
         <div class="col-4">
           <profile></profile>
-          <interest></interest>
         </div>
         <div class="col-8">
           <search></search>
