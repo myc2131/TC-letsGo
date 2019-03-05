@@ -2,6 +2,7 @@
 
   <div class="container">
     <!-- LOG IN -->
+    testing 1235678
     <div show={menuState ==="login"}>
       <form>
         <div class="form-group">
@@ -19,7 +20,7 @@
     </div>
 
     <!-- SIGN UP -->
-    <div show={menuState ==="signUp" }>
+    <div show={menuState ==="signUp"}>
       <form>
         <div class="form-group">
           <label for="fname">First Name:</label>
@@ -78,6 +79,7 @@
 
   <script>
     var tag = this;
+    var this.user = ""; // Dani working on passing the newly sign-up data to this variable
     console.log('app.tag');
 
     this.menuState = "signUp";
