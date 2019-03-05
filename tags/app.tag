@@ -1,7 +1,7 @@
 <app>
 
   <div class="container">
-    <p>testy</p>
+
     <!-- LOG IN -->
     <div show={menuState ==="login"}>
       <form>
@@ -79,6 +79,7 @@
 
   <script>
     var tag = this;
+    var this.user = ""; // Dani working on passing the newly sign-up data to this variable
     console.log('app.tag');
 
     this.menuState = "signUp";
