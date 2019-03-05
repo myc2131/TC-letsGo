@@ -8,9 +8,6 @@
     <!-- SIGN UP -->
     <div show={menuState ==="signUp" }>TEST:signUp</div>
 
-    <!-- CREATE PROFILE -->
-    <div show={menuState === "createProfile"}>TEST: createProfile</div>
-
     <!-- DASHBOARD -->
     <div show={menuState === "dashboard"}>
       <div class="row">
