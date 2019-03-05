@@ -1,7 +1,6 @@
 <app>
 
   <div class="container">
-    <p>testy</p>
     <!-- LOG IN -->
     <div show={menuState ==="login"}>
       <form>
