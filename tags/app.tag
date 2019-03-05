@@ -81,7 +81,7 @@
     var tag = this;
     console.log('app.tag');
 
-    this.menuState = "dashboard"
+    this.menuState = "signUp";
   </script>
 
 
