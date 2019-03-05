@@ -2,7 +2,6 @@
 
   <div class="container">
     <!-- LOG IN -->
-    testing 1235678999999999
     <div show={menuState ==="login"}>
       <form>
         <div class="form-group">
@@ -70,6 +69,7 @@
           <profile></profile>
         </div>
         <div class="col-8">
+          <!-- Showing search tag info -->
           <search></search>
         </div>
       </div>
@@ -79,7 +79,7 @@
 
   <script>
     var tag = this;
-    var this.user = ""; // Dani working on passing the newly sign-up data to this variable
+    var user = ""; // Dani working on passing the newly sign-up data to this variable
     console.log('app.tag');
 
     this.menuState = "signUp";
