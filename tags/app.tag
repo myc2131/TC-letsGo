@@ -1,8 +1,28 @@
 <app>
 
   <div class="container">
+
     <!-- LOG IN -->
     <div show={menuState ==="login"}>
+      <div class="jumbotron">
+       <div class="text-center">
+         <img src="https://i.imgur.com/CQpTLwi.jpg" alt="TC Pic" style="width:400px;height:350px;">
+         </div>
+      </div>
+
+      <div class= "row">
+        <div class="col-6">
+          <div class="card">
+              <img class="card-img-top img-responsive text-right" src="https://i.imgur.com/x5AWJBi.png" alt="TCletsgo">
+
+          </div>
+          </div>
+          <div class="col-6">
+          <div class="card">
+          <img src="./images/title_gif.gif" alt="title">
+            </div>
+          </div>
+       </div>
       <form>
         <div class="form-group">
           <label for="uni">UNI:</label>
@@ -19,7 +39,7 @@
     </div>
 
     <!-- SIGN UP -->
-    <div show={menuState ==="signUp"}>
+    <div show={menuState ==="signUp" }>
       <form>
         <div class="form-group">
           <label for="fname">First Name:</label>
@@ -69,7 +89,6 @@
           <profile></profile>
         </div>
         <div class="col-8">
-          <!-- Showing search tag info -->
           <search></search>
         </div>
       </div>
@@ -79,10 +98,9 @@
 
   <script>
     var tag = this;
-    var user = ""; // Dani working on passing the newly sign-up data to this variable
     console.log('app.tag');
 
-    this.menuState = "signUp";
+    this.menuState = "login"
   </script>
 
 
