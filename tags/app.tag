@@ -64,13 +64,14 @@
     <!-- DASHBOARD -->
     <div show={menuState === "dashboard"}>
       <div class="row">
-        <div class="col-4">
+        <div class="col-2">
           <!-- Showing user info -->
-          <profile></profile>
+          <profile userprofile = {user}></profile>
         </div>
+        <div class="col-2"></div>
         <div class="col-8">
           <!-- Showing search tag info -->
-          <search></search>
+          <search userlist = {userArray}></search>
         </div>
       </div>
     </div>
@@ -79,10 +80,40 @@
 
   <script>
     var tag = this;
-    var user = ""; // Dani working on passing the newly sign-up data to this variable
+    this.user = {
+      userName: "Ricky",
+      year:2019,
+      uni:345643,
+      interest:["basketball","bicycling","traveling"]
+    }; // Dani working on passing the newly sign-up data to this variable
+
+    //Dummy data for tesing purpose
+    this.userArray = [
+      {
+        userName: "Daniel",
+        year: 2019,
+        uni:123456,
+        interest:["basketball","dancing"]
+      },
+      {
+        userName: "Marcus",
+        year: 2019,
+        uni:134563,
+        interest:["bicycling","fishing"]
+      },
+      {
+        userName: "Yesika",
+        year: 2019,
+        uni:097399,
+        interest:["dessert","bicycling","traveling"]
+      }
+    ]
+
+    console.log(this);
     console.log('app.tag');
 
-    this.menuState = "signUp";
+    this.menuState = "dashboard";
+
   </script>
 
 
