@@ -119,7 +119,7 @@
             <label for="interest06">virtual reality</label>
           </div>
 
-          <button class="btn btn-default" onclick={  }>Submit</button>
+          <button class="btn btn-default" onclick={ dashboard }>Submit</button>
         </div>
       </div>
     </div>
@@ -183,6 +183,11 @@
     interests = function(event) {
       event.preventDefault();
       this.menuState = "select interests";
+    }
+
+    dashboard = function(event) {
+      event.preventDefault();
+      this.menuState = "dashboard";
     }
 
   </script>
