@@ -33,7 +33,7 @@
           <input type="password" class="form-control" id="pwd">
         </div>
         <button type="submit" class="btn btn-default">Login</button>
-        <button class="btn btn-default">Sign up</button>
+        <button class="btn btn-default" onclick={ signUp }>Sign up</button>
       </form>
 
     </div>
@@ -73,12 +73,55 @@
         </div>
         <div class="form-group">
           <p>Choose your pronoun(s):</p>
-          <input type="checkbox" name="male" value="he"> He<br>
-          <input type="checkbox" name="female" value="she"> She<br>
-          <input type="checkbox" name="neutral" value="ze" checked> ze<br>
+          <div>
+            <input type="checkbox" id="signup01" name="male" value="he">
+            <label for="signup01">He</label>
+          </div>
+          <div>
+            <input type="checkbox" id="signup02" name="female" value="she">
+            <label for="signup02">She</label>
+          </div>
+          <div>
+            <input type="checkbox" id="signup03" name="neutral" value="ze">
+            <label for="signup03">Ze</label>
+          </div>
+          <button class="btn btn-default" onclick={ interests }>Submit</button>
         </div>
+    </div>
 
+    <!-- SELECT INTERESTS -->
+    <div show = { menuState === "select interests"}>
+      <div class="row">
+        <div class="col, form-group">
+          <p>Select your interests:</p>
+          <div>
+            <input type="checkbox" id="interest01" name="basketball" value="basketball">
+            <label for="interest01">basketball</label>
+          </div>
+          <div>
+            <input type="checkbox" id="interest02" name="mexicanfood" value="mexicanfood">
+            <label for="interest02">Mexican food</label>
+          </div>
+          <div>
+            <input type="checkbox" id="interest03" name="entrepreneurship" value="entrepreneurship">
+            <label for="interest03">entrepreneurship</label>
+          </div>
+          <div>
+            <input type="checkbox" id="interest04" name="hiking" value="hiking">
+            <label for="interest04">hiking</label>
+          </div>
+          <div>
+            <input type="checkbox" id="interest05" name="movies" value="movies">
+            <label for="interest05">movies</label>
+          </div>
+          <div>
+            <input type="checkbox" id="interest06" name="virtualreality" value="virtualreality">
+            <label for="interest06">virtual reality</label>
+          </div>
 
+          <button class="btn btn-default" onclick={  }>Submit</button>
+        </div>
+      </div>
     </div>
 
     <!-- DASHBOARD -->
@@ -100,7 +143,18 @@
     var tag = this;
     console.log('app.tag');
 
-    this.menuState = "login"
+    this.menuState = "login";
+
+    signUp = function(event) {
+      event.preventDefault();
+      this.menuState = "signUp";
+    }
+
+    interests = function(event) {
+      event.preventDefault();
+      this.menuState = "select interests";
+    }
+
   </script>
 
 
