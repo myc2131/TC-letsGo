@@ -32,15 +32,14 @@
           <label for="pwd">Password:</label>
           <input type="password" class="form-control" id="pwd">
         </div>
-        <button type="submit" class="btn btn-default">Login</button>
+        <button type="submit" class="btn btn-default" onclick={ dashboard }>Login</button>
         <button class="btn btn-default" onclick={ signUp }>Sign up</button>
       </form>
-
     </div>
 
     <!-- SIGN UP -->
     <div show={menuState ==="signUp" }>
-      <form>
+      <form id="signupForm">
         <div class="form-group">
           <label for="fname">First Name:</label>
           <input type="text" class="form-control" id="fname">
@@ -50,12 +49,20 @@
           <input type="text" class="form-control" id="lname">
         </div>
         <div class="form-group">
+          <label for="inputUNI">UNI:</label>
+          <input type="text" class="form-control" id="inputUNI">
+        </div>
+        <div class="form-group">
           <label for="email">Email address:</label>
           <input type="email" class="form-control" id="email">
         </div>
-        <div class ="form-group">
+        <div class="form-group">
           <input type="radio" name="enrollment" value="current"> Current Student<br>
           <input type="radio" name="enrollment" value="alumni"> Alumni<br>
+        </div>
+        <div class="form-group">
+          <label for="gradYear">Year of Graduation or Expected Graduation:</label>
+          <input type="text" class="form-control" id="gradYear">
         </div>
 
         <div class="form-group">
@@ -119,7 +126,7 @@
             <label for="interest06">virtual reality</label>
           </div>
 
-          <button class="btn btn-default" onclick={  }>Submit</button>
+          <button class="btn btn-default" onclick={ dashboard }>Submit</button>
         </div>
       </div>
     </div>
@@ -143,46 +150,71 @@
 
   <script>
     var tag = this;
-        console.log('app.tag');
-        this.menuState = "login";
+    console.log('app.tag');
+    this.menuState = "login";
 
     this.user = {
-      userName: "Ricky",
+      userFName: "Ricky",
+      userLName: "Smith",
+      gradStatus: "alumni",
       year:2019,
       uni:345643,
-      interest:["basketball","bicycling","traveling"]
+      interest:["basketball","entrepreneurship","movies"]
     }; // Dani working on passing the newly sign-up data to this variable
 
     //Dummy data for tesing purpose
     this.userArray = [
       {
-        userName: "Daniel",
+        userFName: "Daniel",
+        userLName: "Jones",
+        gradStatus: "current",
         year: 2019,
         uni:123456,
         interest:["basketball","dancing"]
       },
       {
-        userName: "Marcus",
+        userFName: "Marcus",
+        userLName: "Brown",
+        gradStatus: "alumni",
         year: 2019,
         uni:134563,
-        interest:["bicycling","fishing"]
+        interest:["entrepreneurship","fishing"]
       },
       {
-        userName: "Yesika",
+        userFName: "Yesika",
+        userLName: "Simpson",
+        gradStatus: "current",
         year: 2019,
         uni:097399,
-        interest:["dessert","bicycling","traveling"]
+        interest:["dessert","entrepreneurship","movies"]
       }
     ]
 
     signUp = function(event) {
-      event.preventDefault();
       this.menuState = "signUp";
+      event.preventDefault();
     }
 
     interests = function(event) {
-      event.preventDefault();
+      event.preventDefault(); 
+      this.user.userFName = document.getElementById("fname").value;
+      this.user.userLName = document.getElementById("lname").value;
+      var radios = document.getElementsByName('enrollment');      
+      for (var i = 0, length = radios.length; i < length; i++) {
+        if (radios[i].checked) {
+          this.user.gradStatus = radios[i].value;
+          break;
+        }
+      }
+      this.user.year = document.getElementById("gradYear").value;
+      this.user.uni = document.getElementById("inputUNI").value;
+      this.userArray.push(this.user);
       this.menuState = "select interests";
+    }
+    
+    dashboard = function(event) {
+      event.preventDefault();
+      this.menuState = "dashboard";
     }
 
   </script>
