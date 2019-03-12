@@ -6,7 +6,7 @@
     <div show={menuState ==="login"}>
       <div class="jumbotron">
        <div class="text-center">
-         <img src="./images/tc.jpg" alt="TC Pic" style="width:800px;height:600px;">
+         <img src="./images/tc.jpg" alt="TC Pic" style="width:600px;height:400px;">
          </div>
       </div>
 
@@ -32,6 +32,7 @@
           <label for="pwd">Password:</label>
           <input type="password" class="form-control" id="pwd">
         </div>
+        <p>Click Sign-Up for demo purpose</p>
         <button type="submit" class="btn btn-default" onclick={ dashboard }>Login</button>
         <button class="btn btn-default" onclick={ signUp }>Sign up</button>
       </form>
@@ -159,7 +160,7 @@
       gradStatus: "alumni",
       year:2019,
       uni:345643,
-      interest:["basketball","entrepreneurship","movies"]
+      interest:["basketball","entrepreneurship","cognitive-science","coding"]
     }; // Dani working on passing the newly sign-up data to this variable
 
     //Dummy data for tesing purpose
@@ -187,7 +188,25 @@
         year: 2019,
         uni:097399,
         interest:["dessert","entrepreneurship","movies"]
+      },
+      {
+        userFName: "Nathan Holbert",
+        userLName: "Holbert",
+        gradStatus: "current",
+        year: 2019,
+        uni:097399,
+        interest:["cognitive-science"]
+      },
+      {
+        userFName: "Jin",
+        userLName: "",
+        gradStatus: "current",
+        year: 2019,
+        uni:097399,
+        interest:["coding"]
       }
+
+
     ]
 
     signUp = function(event) {
@@ -196,10 +215,10 @@
     }
 
     interests = function(event) {
-      event.preventDefault(); 
+      event.preventDefault();
       this.user.userFName = document.getElementById("fname").value;
       this.user.userLName = document.getElementById("lname").value;
-      var radios = document.getElementsByName('enrollment');      
+      var radios = document.getElementsByName('enrollment');
       for (var i = 0, length = radios.length; i < length; i++) {
         if (radios[i].checked) {
           this.user.gradStatus = radios[i].value;
@@ -211,7 +230,7 @@
       this.userArray.push(this.user);
       this.menuState = "select interests";
     }
-    
+
     dashboard = function(event) {
       event.preventDefault();
       this.menuState = "dashboard";
