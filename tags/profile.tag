@@ -2,7 +2,7 @@
   <div class="card" style="width: 18rem;">
     <img src="https://via.placeholder.com/100" class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">{opts.userprofile.userName}</h5>
+      <h5 class="card-title">{opts.userprofile.userFName}</h5>
       <p class="card-text"></p>
       <ul>
         <my-interests each={item in opts.userprofile.interest}><my-interests>
