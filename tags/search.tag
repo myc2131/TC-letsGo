@@ -8,10 +8,10 @@
     var tag = this;
     console.log('search.tag');
     console.log(opts.userlist);
-    var interestsArray =  []; //store the intersts that have been selected
+    var interestsArray =  []; //store the interests that have been selected
     this.friends = [];
-    // Listen when user deselect the interest and remove the interest from interestsArray
-    observable.on("removeInterest",function(e){
+    // Listen when user deselects the interest and removes the interest from interestsArray
+    observable.on("removeInterest", function(e){
       var index = interestsArray.indexOf(e);
       if (index > -1){
         interestsArray.splice(index, 1);
@@ -30,13 +30,13 @@
     })
 
     //Find out friends that have same interests that have been selected
-     function match(selectedIns,friendsIns){
-       for(var i = 0, len = selectedIns.length; i < len; i++){
-         console.log("test");
-      if($.inArray(selectedIns[i], friendsIns) == -1) return false;
-   }
-   return true;
- }
+    function match(selectedIns,friendsIns){
+      for (var i = 0, len = selectedIns.length; i < len; i++){
+        console.log("test");
+        if ($.inArray(selectedIns[i], friendsIns) == -1) return false;
+        }
+        return true;
+    }
 
     // Add the friends that have same interests to the friends []
     function filter(){
@@ -65,7 +65,7 @@
   <div class="card" style="width: 18rem;">
     <img src="https://via.placeholder.com/100" class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">{item.userName}</h5>
+      <h5 class="card-title">{item.userFName}</h5>
       <p class="card-text">UNI:{item.uni}</p>
     </div>
   </div>
