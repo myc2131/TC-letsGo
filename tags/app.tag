@@ -6,20 +6,20 @@
     <div show={menuState ==="login"}>
       <div class="jumbotron">
        <div class="text-center">
-         <img src="https://i.imgur.com/CQpTLwi.jpg" alt="TC Pic" style="width:400px;height:350px;">
+         <img src="./images/tc.jpg" alt="TC Pic" style="width:800px;height:600px;">
          </div>
       </div>
 
       <div class= "row">
         <div class="col-6">
           <div class="card">
-              <img class="card-img-top img-responsive text-right" src="https://i.imgur.com/x5AWJBi.png" alt="TCletsgo">
+              <img class="card-img-top img-responsive text-right" src="./images/tc-letsgo.png" alt="TCletsgo">
 
           </div>
           </div>
           <div class="col-6">
           <div class="card">
-          <img src="./images/title_gif.gif" alt="title">
+          <img src="./images/title_gif.gif" style="height:120px" alt="title">
             </div>
           </div>
        </div>
@@ -143,6 +143,8 @@
 
   <script>
     var tag = this;
+        console.log('app.tag');
+        this.menuState = "login";
 
     this.user = {
       userName: "Ricky",
@@ -172,11 +174,6 @@
         interest:["dessert","bicycling","traveling"]
       }
     ]
-
-    console.log(this);
-    console.log('app.tag');
-
-    this.menuState = "dashboard";
 
     signUp = function(event) {
       event.preventDefault();
