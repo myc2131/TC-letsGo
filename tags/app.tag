@@ -33,7 +33,7 @@
           <input type="password" class="form-control" id="pwd">
         </div>
         <button type="submit" class="btn btn-default">Login</button>
-        <button class="btn btn-default">Sign up</button>
+        <button class="btn btn-default" onclick={ signUp }>Sign up</button>
       </form>
 
     </div>
@@ -75,10 +75,18 @@
           <p>Choose your pronoun(s):</p>
           <input type="checkbox" name="male" value="he"> He<br>
           <input type="checkbox" name="female" value="she"> She<br>
-          <input type="checkbox" name="neutral" value="ze" checked> ze<br>
+          <input type="checkbox" name="neutral" value="ze" checked> Ze<br>
+          <button class="btn btn-default" onclick={ interests }>Submit</button>
         </div>
+    </div>
 
-
+    <!-- SELECT INTERESTS -->
+    <div show = { menuState === "select interests"}>
+      <div class="row">
+        <div class="col">
+          <p>test test</p>
+        </div>
+      </div>
     </div>
 
     <!-- DASHBOARD -->
@@ -100,7 +108,17 @@
     var tag = this;
     console.log('app.tag');
 
-    this.menuState = "login"
+    this.menuState = "login";
+    signUp = function(event) {
+      event.preventDefault();
+      this.menuState = "signUp";
+    }
+
+    interests = function(event) {
+      event.preventDefault();
+      this.menuState = "select interests";
+    }
+
   </script>
 
 
